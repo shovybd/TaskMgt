@@ -1,0 +1,32 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.singleboard-container {
+  .offcanvas-header {
+    background-color: #f5f5f5;
+    .btn-close {
+      background: url(/images/cross.svg);
+      background-size: 20px;
+      background-repeat: no-repeat;
+    }
+  }
+  .accordion {
+    .accordion-item:first-of-type .accordion-button {
+      border-radius: 0;
+      border-radius: 3px;
+    }
+    .accordion-button:not(.collapsed) {
+      box-shadow: none;
+    }
+    .accordion-item {
+      border: 0;
+      background-color: transparent;
+    }
+    .accordion-body {
+      padding: 0 !important;
+    }
+  }
+  .offcanvas-backdrop {
+    display: none;
+  }
+}

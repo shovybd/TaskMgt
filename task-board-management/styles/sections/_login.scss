@@ -1,0 +1,26 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.login-section {
+  @include globalCard(551px, 551px);
+  .logo {
+    height: 58.46px;
+    width: 214.61px;
+    margin-left: 599px;
+    margin-right: 626.39px;
+    margin-top: 95px;
+    margin-bottom: 69.54px;
+  }
+  
+  .badge {
+    transform: translate(-37%, -129%);
+    opacity: 30%;
+    position: absolute;
+  }
+  .second-badge {
+    opacity: 30%;
+    position: absolute;
+    transform-origin: right;
+    transform: translate(529%, -72%) rotate(180deg);
+  }
+}

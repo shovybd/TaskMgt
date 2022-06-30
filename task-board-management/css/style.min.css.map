@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,IAAI,CAAJ,QAAI,CACJ,IAAI,CAAJ,iBAAI,CACJ,IAAI,CAAJ,iBAAI",
+    "sources": [
+        "../styles/style.scss"
+    ],
+    "names": [],
+    "file": "style.min.css"
+}

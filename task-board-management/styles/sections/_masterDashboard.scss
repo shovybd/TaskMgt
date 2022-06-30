@@ -1,0 +1,149 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.master-dashboard-section {
+    .sidebar {
+      @include sidebarStyle(
+        220px,
+        $primary,
+        20px,
+        $secondary,
+        0,
+        none,
+        brightness(0) saturate(100%) invert(99%) sepia(13%) saturate(0%)
+          hue-rotate(133deg) brightness(111%) contrast(100%),
+        15px,
+        52px,
+        0 5px 0 5px,
+        $secondary,
+        0,
+        none,
+        brightness(0) saturate(100%) invert(99%) sepia(13%) saturate(0%)
+          hue-rotate(133deg) brightness(111%) contrast(100%),
+        0,
+        210px,
+        0
+      );
+    }
+  
+    .sidebar.active {
+      box-shadow: 0px 4px 8px rgba(20, 19,19, 0.15);
+      @include sidebarStyle(
+        60px,
+        $white,
+        39px,
+        transparent,
+        2.4px solid $orangeColor,
+        100%,
+        brightness(0) saturate(100%) invert(70%) sepia(21%) saturate(6890%)
+          hue-rotate(355deg) brightness(100%) contrast(103%),
+        0,
+        33px,
+        0,
+        transparent,
+        2.4px solid $orangeColor,
+        100%,
+        brightness(0) saturate(100%) invert(70%) sepia(21%) saturate(6890%)
+          hue-rotate(355deg) brightness(100%) contrast(103%),
+        2.4px solid transparent,
+        100%,
+        0
+      );
+    }
+  
+    .sidebar-footer-menu-links {
+      display: none;
+    }
+  
+    .footer-menu {
+      width: 220px;
+    }
+  
+    .home-section {
+      position: relative;
+      min-height: 100vh;
+      width: calc(100% - 220px);
+      left: 220px;
+      transition: all 0.5s ease;
+  
+      #navbar,
+      .footer {
+        // background-color: $bodyColor;
+        width: calc(100% - 220px);
+        left: 220px;
+        transition: all 0.5s ease;
+      }
+      #headerNav {
+        position: fixed;
+        z-index: 1000;
+        width: calc(100% - 220px);
+        top: 60px;
+        right: 0;
+        transition: all 0.5s ease;
+      }
+      #navbar3 {
+        height: 40px;
+      }
+  
+      .footer {
+        margin: 0 !important;
+      }
+    }
+  
+    .overlay {
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 220px;
+      bottom: 0;
+      z-index: 1050;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  
+    .sidebar.active ~ .home-section {
+      width: calc(100% - 60px);
+      left: 60px;
+      #navbar,
+      .footer {
+        left: 60px;
+        width: calc(100% - 60px);
+        transition: all 0.5s ease;
+      }
+      .overlay {
+        display: none;
+      }
+  
+      #headerNav {
+        position: fixed;
+        z-index: 1000;
+        width: calc(100% - 60px);
+        top: 60px;
+        right: 0;
+        transition: all 0.5s ease;
+      }
+  
+      #navbar2 {
+        height: 56px;
+        .navbar-brand {
+          @include brandTextStyle(300, 22px, 30px, -0.02em);
+        }
+      }
+      #navbar3 {
+        height: 40px;
+        .navbar-brand {
+          @include brandTextStyle(300, 13px, 18px, 0);
+          .brand-text-span {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  
+    .home-section .home-content {
+      padding-top: 81px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }

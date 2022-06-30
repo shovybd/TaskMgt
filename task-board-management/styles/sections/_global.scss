@@ -1,0 +1,131 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column-list {
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.list-container {
+  width: 100%;
+  overflow: scroll;
+  display: flex;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  &::-webkit-scrollbar {
+    background: transparent; /* Chrome/Safari/Webkit */
+    width: 0px;
+  }
+}
+.card-container {
+  word-wrap: break-word;
+  flex: 0 0 auto;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+//if  react-smooth-dnd used then some design will be  added
+// .column-drop-preview {
+//   background-color: rgba(150, 150, 200, 0.1);
+//   border: 1px dashed #abc;
+//   margin: 5px 45px 5px 5px;
+// }
+
+// .card-ghost {
+//   transition: transform 0.18s ease;
+//   transform: rotateZ(5deg);
+//   font-weight: bold;
+// }
+// .card-ghost-drop {
+//   transition: transform 0.18s ease-in-out;
+//   transform: rotateZ(0deg);
+//   font-weight: bold;
+// }
+// .cards-drop-preview {
+//   background-color: rgba(150, 150, 200, 0.1);
+//   border: 1px dashed #abc;
+//   margin: 5px;
+// }
+
+.react-contextmenu {
+  z-index: 1070 !important;
+}
+.context-sub-menu {
+  position: absolute;
+  z-index: 1000;
+  width: 228px;
+  cursor: default;
+  min-height: 200px;
+  top: 50%;
+  left: 100%;
+}
+
+.move-to-text {
+  width: 100%;
+  height: 40px;
+  &:hover {
+    background-color: rgb(100, 108, 116);
+  }
+}
+.nested-item:hover {
+  background-color: rgb(203, 194, 194);
+}
+
+.group-container {
+  // width: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+}
+
+.group-card-container {
+  word-wrap: break-word;
+  flex: 1 1 auto;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.group-card {
+  width: 228px;
+}
+
+.board-subgroup-move {
+  width: 100%;
+  .accordion {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    &:hover {
+      background-color: rgb(140, 147, 154);
+    }
+  }
+  .accordion > div {
+    display: none;
+  }
+
+  .accordion:hover > div {
+    display: block;
+  }
+}

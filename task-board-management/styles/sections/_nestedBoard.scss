@@ -1,0 +1,25 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.board-details-content {
+  display: flex;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  &::after {
+    content: "";
+    flex: 0 0 10px;
+  }
+}
+.column-div {
+  border-right: 1px solid $primary;
+  flex: 0 0 auto;
+  width: 370px;
+  height: 100vh;
+  > * {
+    padding: 0 20px;
+  }
+  &:last-child {
+    border-right: none;
+  }
+}

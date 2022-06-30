@@ -1,0 +1,108 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.navbar {
+  background-color: $bodyColor;
+ margin-left: 2px;
+  .nav-item {
+    margin-right: 20px;
+  }
+  .profile-div {
+    margin-right: 10px;
+    img {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  .board-lists-div {
+    .dropdown {
+      .dropdown-toggle::after {
+        content: url(/images/list.svg);
+      }
+    }
+  }
+
+  .dropdown {
+
+    .dropdown-toggle::after {
+      border-top: 0;
+      content: url(/images/PLUS.svg);
+      margin-top: 8px;
+    }
+    .dropdown-toggle[aria-expanded="true"] {
+      filter: brightness(0) saturate(100%) invert(67%) sepia(39%)
+        saturate(4097%) hue-rotate(356deg) brightness(101%) contrast(103%);
+    }
+    .dropdown-menu {
+      z-index: 1060;
+      width: 228px;
+      &:before {
+        position: absolute;
+        top: -10px;
+        right: 7px;
+        display: inline-block;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #ccc;
+        border-left: 10px solid transparent;
+        border-bottom-color: rgba(0, 0, 0, 0.2);
+        content: "";
+      }
+      &:after {
+        position: absolute;
+        top: -9px;
+        right: 8px;
+        display: inline-block;
+        border-right: 9px solid transparent;
+        border-bottom: 9px solid #ffffff;
+        border-left: 9px solid transparent;
+        content: "";
+      }
+
+      .dropdown-item {
+        height: 42px;
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 400;
+        padding: 11px 12px 12px 21px;
+        border-bottom: 1px solid #ebebeb;
+        &:last-child {
+          padding-bottom: 17px;
+          border-bottom: 0;
+        }
+
+        img {
+          margin-bottom: 13px;
+          margin-top: 13px;
+          padding: 5px;
+        }
+        span {
+          margin-left: 14px;
+        }
+        &:hover {
+          color: $white;
+          background-color: $orangeColor;
+          img {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
+              saturate(0%) hue-rotate(283deg) brightness(103%) contrast(103%);
+          }
+        }
+      }
+      .active-link {
+        color: $white;
+        background-color: $orangeColor;
+        img {
+          filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
+            saturate(0%) hue-rotate(283deg) brightness(103%) contrast(103%);
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  transition: $transitionEase;
+  height: 60px;
+  padding-top: 0;
+  padding-bottom: 0;
+}

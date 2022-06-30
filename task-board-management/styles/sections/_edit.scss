@@ -1,0 +1,31 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.multiline-edit-div {
+  input,
+  textarea {
+    background-color: transparent;
+    border: 0;
+    border-radius: 3px;
+  }
+
+  input:hover,
+  textarea:hover {
+    border: 0;
+    background-color: #d7dbf3;
+    cursor: pointer;
+  }
+
+  textarea {
+    resize: none;
+    overflow: hidden;
+    min-height: 20px;
+    max-height: 100px;
+    font-size: 14px;
+  }
+
+  textarea:focus {
+    outline: 5px auto Highlight; /* Firefox */
+    outline: 5px auto -webkit-focus-ring-color; /* Chrome, Safari */
+  }
+}

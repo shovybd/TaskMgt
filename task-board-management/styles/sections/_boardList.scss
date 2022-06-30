@@ -1,0 +1,18 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+  .trello-content-editable{
+    width:500px;  
+
+    background-color: inherit;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    &:focus{
+      background-color: white;
+      
+    }
+  }
+
+  
